@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -7,6 +8,155 @@
   pointer-events: none;
 }
 
+.app-wrap {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+}
+
+.todo-input input,
+.todo-input select {
+  padding: 8px;
+  margin-right: 8px;
+}
+
+.todo-input button {
+  padding: 8px 12px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.todo-left {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-deadline {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.todo-priority-label {
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+/* 優先度別の色 */
+.todo-item.high {
+  background-color: #ffcccc; /* 赤 */
+}
+.todo-item.medium {
+  background-color: #fff2cc; /* 黄 */
+}
+.todo-item.low {
+  background-color: #ccffcc; /* 緑 */
+}
+
+.todo-delete {
+  padding: 4px 8px;
+  border: none;
+  background: #999;
+  color: white;
+  border-radius: 4px;
+}
+
+/* ←★追加これ */
+.app-back-btn {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* ←★ボタンっぽく */
+.app-back-btn a {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #333;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.counter-title {
+  max-Width: 700px;
+  margin: 40px auto;
+  padding: 20; 
+}
+
+/* カウンター全体 */
+.counter-wrap {
+  margin: 20px 0;
+  font-family: system-ui, sans-serif;
+}
+
+/* ボタンの共通スタイル */
+.count-warp {
+  display: block;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.count {
+  padding: 6px 12px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #eee;
+  transition: 0.2s;
+}
+
+.count:hover {
+  background-color: #ffcccc;
+}
+
+/* +1 ボタン */
+.count-inc {
+  width: 90px;
+  background-color: #ffcccc; /* 赤 */
+}
+
+.count-inc:hover {
+  background-color: #ffbbaa; /* 赤 */
+}
+
+/* -1 ボタン */
+.count-dec {
+  width: 90px;
+  background-color: #ffffbb; /* 黄 */
+}
+
+.count-dec:hover {
+  background-color: #fff2aa;
+}
+
+/* リセットボタン */
+.count-reset {
+  background-color: #ccffcc; /* 緑 */
+}
+
+.count-reset:hover {
+  background-color: #aaffaa;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -26,13 +176,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

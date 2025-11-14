@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css"; 
 import { Todo } from "./types/Todo";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import TodoInput from "./components/TodoInput";
@@ -11,8 +12,8 @@ import MemoList from "./components/MemoList";
 const App: React.FC = () => {
   const [todos, setTodos] = useLocalStorage<Todo[]>("my-todos", []);
 
-  const addTodo = (text: string) => {
-    const newTodo: Todo = { id: Date.now(), text, completed: false };
+  const addTodo = (text: string, deadline: string, priority?: 1 | 2 | 3) => {
+    const newTodo: Todo = { id: Date.now(), text, completed: false, deadline, priority };
     setTodos([...todos, newTodo]);
   };
 
@@ -40,29 +41,27 @@ const App: React.FC = () => {
   };
 
   return (
-    <div
-      style={{
-        maxWidth: 700,
-        margin: "40px auto",
-        padding: 20,
-        fontFamily: "system-ui, sans-serif",
-      }}
-    >
-      <h1 style={{ marginBottom: 8 }}>My Todo App</h1>
-      <p style={{ color: "#666", marginBottom: 20 }}>
+    <div className="app-wrap">
+      <h1 className="app-title">My Todo App</h1>
+      <p className="app-text">
         React + TypeScript + LocalStorage の練習アプリ
       </p>
 
       <TodoInput onAdd={addTodo} />
       <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />
 
-      {/* ✅ カウンターを下に追加 */}
       <Counter />
 
-      <div style={{ maxWidth: 600, margin: "40px auto", padding: 20 }}>
+      <div className="counter-title">
         <h1>🗒 買い物メモアプリ</h1>
         <MemoInput onAdd={addMemo} />
         <MemoList memos={memos} onDelete={deleteMemo} />
+      </div>
+
+      <div className="app-back-btn">
+        <a href="https://minahada.com/wordpress/" target="_blank" rel="noopener noreferrer">
+          トップに戻る
+       </a>
       </div>
     </div>
   );
