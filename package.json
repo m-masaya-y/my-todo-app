@@ -2,7 +2,7 @@
   "name": "my-todo-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://m-masaya-y.github.io/my-todo-app",
+  "homepage": "https://m-masaya-y.github.io/upgd-my-todo-app/",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",

@@ -6,4 +6,3 @@ export type Todo = {
     deadline: string; // ISO文字列で日付を保持
     priority?: 1 | 2 | 3; // 手動優先度 1=高, 2=中, 3=低（任意）
   };
-  
